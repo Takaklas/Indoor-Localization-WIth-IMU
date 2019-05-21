@@ -1,7 +1,7 @@
 # Indoor-Localization-WIth-IMU
 Pedestrian Dead Reckoning a.k.a. Indoor Localization using IMU (Inertial Measurement Unit)
 
-A set of python scripts for indoor localization using IMU.
+A set of python scripts for indoor localization using IMU. Heavy use of the RTIMU library for IMU management, data gathering and orientation estimation using kalman-RTQF filters.
 
 A brief description:
 - position_PDR.py: Performs localization based on the Step Counting technique, combined with orientation (mainly heading) from the sensor. A fixed step length is used and heading is corrected using a predifined offset based on mapping of the space used indoors. Performs quite nicely (>95% step detection). Errors accumulate from heading declinations (~5-10 degrees) so quantization of heading is used (that means we split the 360 degree plane in 2,4,8 etc regins such as eg for 4 regions:
