@@ -64,15 +64,15 @@ if __name__ == "__main__":
     #plt.plot(x, y2, label='Accel_Y')
 
     heading = read_file("heading.txt")
-    plt.plot(x, [0.5*math.pi]*size)
-    plt.plot(x, [math.pi]*size)
-    plt.plot(x, [1.5*math.pi]*size) 
-    plt.plot(x, [2*math.pi]*size)
+    plt.plot(x, [0.5*math.pi]*size, label='90 degrees')
+    plt.plot(x, [math.pi]*size, label='180 degrees')
+    plt.plot(x, [1.5*math.pi]*size, label='270 degrees') 
+    plt.plot(x, [2*math.pi]*size, label='360 degrees')
     linestyles = ['-', '--', '-.', ':']
-    plt.plot(x, [0.25*math.pi]*size, linestyle = linestyles[3])
-    plt.plot(x, [0.75*math.pi]*size, linestyle = linestyles[3])
-    plt.plot(x, [1.25*math.pi]*size, linestyle = linestyles[3]) 
-    plt.plot(x, [1.75*math.pi]*size, linestyle = linestyles[3])
+    plt.plot(x, [0.25*math.pi]*size, linestyle = linestyles[3], label='45 degrees')
+    plt.plot(x, [0.75*math.pi]*size, linestyle = linestyles[3], label='135 degrees')
+    plt.plot(x, [1.25*math.pi]*size, linestyle = linestyles[3], label='225 degrees') 
+    plt.plot(x, [1.75*math.pi]*size, linestyle = linestyles[3], label='315 degrees')
     plt.plot(x, heading, label='heading')
 
     dt = interval  # = 1/fs where fs is your sampling frequency

@@ -70,7 +70,10 @@ file_y = open("accel_Y.txt","w")
 file_z = open("accel_Z.txt","w")
 file_pos = open("positions.txt","w")
 file_heading = open("heading.txt","w")
+file_positions_heading = open("positions_heading.txt","w")
 file_pos.write('{:.3f},{:.3f}\n'.format(position[0],position[1]))
+heading = 90
+file_positions_heading.write('{:.3f}\n'.format(heading))
 
 start = time.time()
 reps = 0
@@ -91,7 +94,7 @@ try:
             pitch, roll, yaw = map(math.degrees,fusionPose)
             if yaw < 0: yaw = yaw + 360.0
             #heading = 280.0 - heading
-            heading = 180 - yaw #165.0 - yaw
+            heading = 165 - yaw #165.0 - yaw
             if heading < 0: heading += 360
             heading_keep_rad = math.radians(heading)
             heading_quantized = round(heading/90) * 90 #-90
@@ -142,6 +145,7 @@ try:
                     position[1] += step_len * math.sin(heading_rad)
                     print(position)
                     file_pos.write('{:.3f},{:.3f}\n'.format(position[0],position[1]))
+                    file_positions_heading.write('{:.3f}\n'.format(heading))
                     steps += 1
                     if visualise:
                         MESSAGE = '{:.3f} {:.3f}\n'.format(position[0],position[1])
@@ -180,6 +184,7 @@ except KeyboardInterrupt:
     file_z.close()
     file_pos.close()
     file_heading.close()
+    file_positions_heading.close()
     print("Mean time {}ms".format((time.time()-start)/reps))
     print("Total steps: %d " % steps)
 

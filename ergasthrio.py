@@ -4,7 +4,7 @@ import numpy as np
 import time
 
 import positions
-from raspi import netmode
+import netmode
 from my_compass import draw_compass, draw_arrow
 
 import sys
