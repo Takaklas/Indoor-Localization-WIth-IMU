@@ -9,8 +9,9 @@ A brief description:
   - -45<^<45 -> 0 degrees
   - 45<^<145 -> 90 degrees
   etc.
-If called with a random parameter, sends data to an inserted ip server running plot.py file for visualization.
-Implementation based on: https://web.cs.wpi.edu/~emmanuel/courses/cs528/F17/slides/lecture06b.pdf
+  
+  If called with a random parameter, sends data to an inserted ip server running plot.py file for visualization.
+  Implementation based on: https://web.cs.wpi.edu/~emmanuel/courses/cs528/F17/slides/lecture06b.pdf
   
 - position_Dead_reckoning.py: Performs localization by double integration of accelerometer sensor, combined with orientation (mainly heading) from the sensor. Does LCS (Local Coordinate System) to GCS (Global Coordinate System) using quaternions. Performs poorly.
   based on https://www.st.com/resource/en/design_tip/dm00513638.pdf  
